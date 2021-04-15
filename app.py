@@ -230,10 +230,10 @@ def serve_layout_local():
 
 
 
-
+if api_is_up == 'True':
+	app.layout = serve_layout
+if api_is_up == 'False':
 	app.layout = serve_layout_local
-
-
 
 
 if __name__ == '__main__':
