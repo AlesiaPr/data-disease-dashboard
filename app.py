@@ -41,7 +41,6 @@ load_dotenv()
 # 	df['results'] = results
 # 	return df
 
-
 def get_sentiment_data_local(path):
 	"""this function is only used when the API is not working
 	for whatever reason both locally and production-wise.  Based
@@ -67,7 +66,7 @@ server = app.server
 
 environment = os.getenv('FLASK_ENV', 'production')
 
-api_is_up = os.getenv('API_IS_UP', 'True')
+api_is_up = os.getenv('API_IS_UP', 'False')
 
 
 def generate_table(dataframe, max_rows=6):
@@ -237,12 +236,5 @@ if api_is_up == 'False':
 	app.layout = serve_layout_local
 
 
-
-
 if __name__ == '__main__':
 	app.run_server(debug=True)
-
-
-
-
-
