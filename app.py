@@ -66,7 +66,7 @@ server = app.server
 
 environment = os.getenv('FLASK_ENV', 'production')
 
-api_is_up = os.getenv('API_IS_UP', 'False')
+api_is_up = os.getenv('API_IS_UP', 'True')
 
 
 def generate_table(dataframe, max_rows=6):
@@ -230,9 +230,9 @@ def serve_layout_local():
 
 
 
-if api_is_up == 'True':
-	app.layout = serve_layout
 if api_is_up == 'False':
+	app.layout = serve_layout
+if api_is_up == 'True':
 	app.layout = serve_layout_local
 
 
