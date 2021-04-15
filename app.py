@@ -41,6 +41,7 @@ load_dotenv()
 # 	df['results'] = results
 # 	return df
 
+
 def get_sentiment_data_local(path):
 	"""this function is only used when the API is not working
 	for whatever reason both locally and production-wise.  Based
@@ -234,6 +235,8 @@ if api_is_up == 'True':
 	app.layout = serve_layout
 if api_is_up == 'False':
 	app.layout = serve_layout_local
+
+
 
 
 if __name__ == '__main__':
