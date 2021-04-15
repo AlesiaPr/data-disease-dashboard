@@ -238,8 +238,3 @@ if api_is_up == 'False':
 
 if __name__ == '__main__':
 	app.run_server(debug=True)
-
-
-
-
-
